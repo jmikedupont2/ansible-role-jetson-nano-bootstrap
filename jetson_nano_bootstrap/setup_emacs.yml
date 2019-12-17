@@ -1,0 +1,13 @@
+- connection: local
+  hosts: localhost
+ # become: yes
+  vars_files:
+    - vars/main.yml
+    - "{{ lookup('env','HOME')}}/.github.yml"
+    - src/ansible-emacs/vars/Debian.yml
+  tasks:
+    - name: run_cask
+      shell : ./src/cask/bin/cask
+    #  - # import_tasks: tasks/main.yml
+    #      import_tasks: src/ansible-emacs/tasks/main.yml
+

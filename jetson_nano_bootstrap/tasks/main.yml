@@ -1,4 +1,12 @@
-
+- name: emacs
+  become: yes
+  become_user: root
+  with_items:
+    - emacs-nox
+  package:
+    name: '{{ item }}'
+    state: present
+  
 - name : get source repos
   git:
     repo: "{{github_url}}{{item}}.git"
@@ -6,7 +14,8 @@
     accept_hostkey: yes
     force: yes
   with_items:
-    - ansible-emacs
+    - cask
+#    - ansible-emacs not really interesting
     - ansible-development-environment
     - JetsonCluster
     - cookiecutter-ansible-role-multi
