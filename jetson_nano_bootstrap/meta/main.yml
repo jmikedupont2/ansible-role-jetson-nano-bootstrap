@@ -1,0 +1,17 @@
+galaxy_info:
+  role_name: jetson_nano_bootstrap
+  author: James Michael DuPont
+  description: Setup jetson nano with and for ansible
+  company: Introspector Software
+  license: GPL
+  min_ansible_version: 2.9
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+
+  galaxy_tags:
+    - system
+
+dependencies: []

@@ -1,0 +1,20 @@
+
+- name : get source repos
+  git:
+    repo: "{{github_url}}{{item}}.git"
+    dest: "src/{{item}}"
+    accept_hostkey: yes
+    force: yes
+  with_items:
+    - ansible-emacs
+    - ansible-development-environment
+    - JetsonCluster
+    - cookiecutter-ansible-role-multi
+    - nano_playground
+    - jetson-docker
+    - jetson-inference
+    - mazer
+    - ansible
+    - functional-ansible
+
+# generate : dpkg, rpm, zip or wheel files based on ansible description
