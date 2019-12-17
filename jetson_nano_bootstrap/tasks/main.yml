@@ -16,5 +16,9 @@
     - mazer
     - ansible
     - functional-ansible
+    - ansible-github-deploy-key
 
 # generate : dpkg, rpm, zip or wheel files based on ansible description
+
+- name : molecule
+  import_tasks: src/ansible-development-environment/roles/molecule/tasks/main.yml

@@ -1,8 +1,10 @@
 - connection: local
   hosts: localhost
+  become: yes
   vars_files:
     - vars/main.yml
     - "{{ lookup('env','HOME')}}/.github.yml"
     - src/ansible-development-environment/roles/molecule/vars/main.yml
   tasks:
-    - import_tasks: tasks/main.yml
+    - # import_tasks: tasks/main.yml
+      import_tasks: src/ansible-development-environment/roles/molecule/tasks/main.yml
