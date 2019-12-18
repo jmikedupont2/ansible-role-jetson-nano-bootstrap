@@ -38,6 +38,7 @@
     dest: "src/{{item}}"
     accept_hostkey: yes
     force: yes
+    depth: 1
   with_items:
     - keras-team/keras
     - LiyuanLucasLiu/LightNER
