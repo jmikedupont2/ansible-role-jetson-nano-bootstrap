@@ -1,11 +1,3 @@
-- name: emacs
-  become: yes
-  become_user: root
-  with_items:
-    - emacs-nox
-  package:
-    name: '{{ item }}'
-    state: present
   
 - name : get source repos
   git:
@@ -26,8 +18,45 @@
     - ansible
     - functional-ansible
     - ansible-github-deploy-key
+    - nvidia-jetbot-workshop
+    - ibm-waldo
+    - configSet
+    - jetson-nano
+    - Jetson-Nano-Installation
+    - jetson-nano-setup
+    - krispedia.github.io
+    - jetson_nano
+    - jetbot
+    - jetracer
+    - jetson_stats
+    - CSI-Camera
+
+
+- name : get source repos
+  git:
+    repo: "https://github.com/{{item}}"
+    dest: "src/{{item}}"
+    accept_hostkey: yes
+    force: yes
+  with_items:
+    - keras-team/keras
+    - LiyuanLucasLiu/LightNER
+    - LiyuanLucasLiu/LD-Net
+    - Cadene/pretrained-models.pytorch
+    - facebookresearch/pythia
+    - microsoft/nlp-recipes
+    - Separius/awesome-sentence-embedding
+    - tensorlayer/pretrained-models
+    - facebookresearch/fastText
+    - stanfordnlp/GloVe
+    - dmlc/gluon-nlp
+    - alyptik/lkml-maildir
+    - mkerrisk/man-pages
+    - torvalds/linux
+    - alexcourouble/email2git
+    - explosion/spaCy
 
 # generate : dpkg, rpm, zip or wheel files based on ansible description
 
-- name : molecule
-  import_tasks: src/ansible-development-environment/roles/molecule/tasks/main.yml
+#- name : molecule
+#  import_tasks: src/ansible-development-environment/roles/molecule/tasks/main.yml

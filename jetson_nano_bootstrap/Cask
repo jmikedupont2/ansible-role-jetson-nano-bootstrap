@@ -2,6 +2,9 @@
 (source melpa)
 
 (depends-on "bind-key")
+(depends-on "moe-theme")
+(depends-on "caskxy")
+(depends-on "cask-mode")
 (depends-on "cask")
 (depends-on "dash")
 (depends-on "drag-stuff")
